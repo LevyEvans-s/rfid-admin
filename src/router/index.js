@@ -10,7 +10,7 @@ const privateRoutes = [
     component: layout,
     redirect: '/user/manage',
     meta: {
-      title: 'user',
+      title: '用户',
       icon: 'personnel'
     },
     children: [
@@ -18,7 +18,7 @@ const privateRoutes = [
         path: '/user/manage',
         component: () => import('@/views/user-manage/index'),
         meta: {
-          title: 'userManage',
+          title: '用户管理',
           icon: 'personnel-manage'
         }
       },
@@ -26,7 +26,7 @@ const privateRoutes = [
         path: '/user/role',
         component: () => import('@/views/role-list/index'),
         meta: {
-          title: 'roleList',
+          title: '角色列表',
           icon: 'role'
         }
       },
@@ -34,7 +34,7 @@ const privateRoutes = [
         path: '/user/permission',
         component: () => import('@/views/permission-list/index'),
         meta: {
-          title: 'permissionList',
+          title: '权限管理',
           icon: 'permission'
         }
       },
@@ -43,7 +43,7 @@ const privateRoutes = [
         name: 'userInfo',
         component: () => import('@/views/user-info/index'),
         meta: {
-          title: 'userInfo'
+          title: '角色信息'
         }
       },
       {
@@ -57,42 +57,20 @@ const privateRoutes = [
     ]
   },
   {
-    path: '/article',
+    path: '/store',
     component: layout,
-    redirect: '/article/ranking',
+    redirect: '/store/ranking',
     meta: {
-      title: 'article',
-      icon: 'article'
+      title: '仓储管理',
+      icon: 'store'
     },
     children: [
       {
-        path: '/article/ranking',
-        component: () => import('@/views/article-ranking/index'),
+        path: '/store/storage',
+        component: () => import('@/views/store-storage/index'),
         meta: {
-          title: 'articleRanking',
-          icon: 'article-ranking'
-        }
-      },
-      {
-        path: '/article/:id',
-        component: () => import('@/views/article-detail/index'),
-        meta: {
-          title: 'articleDetail'
-        }
-      },
-      {
-        path: '/article/create',
-        component: () => import('@/views/article-create/index'),
-        meta: {
-          title: 'articleCreate',
-          icon: 'article-create'
-        }
-      },
-      {
-        path: '/article/editor/:id',
-        component: () => import('@/views/article-create/index'),
-        meta: {
-          title: 'articleEditor'
+          title: '入库清单',
+          icon: 'storage-list'
         }
       }
     ]
@@ -113,7 +91,7 @@ const publicRoutes = [
         name: 'profile',
         component: () => import('@/views/profile/index'),
         meta: {
-          title: 'profile',
+          title: '个人中心',
           icon: 'el-icon-user'
         }
       },
