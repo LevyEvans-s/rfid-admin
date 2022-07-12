@@ -2,7 +2,7 @@ import router from './router'
 import store from './store'
 
 // 白名单
-const whiteList = ['/login']
+const whiteList = ['/login', '/user', '/user/manage', '/user/permission', '/profile', '/user/role']
 /**
  * 路由前置守卫
  */
