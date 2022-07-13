@@ -3,15 +3,22 @@
     <router-link class="tags-view-item" :class="isActive(tag) ? 'active' : ''" :style="{
       backgroundColor: isActive(tag) ? $store.getters.cssVar.menuBg : '',
       borderColor: isActive(tag) ? $store.getters.cssVar.menuBg : ''
-    }" v-for="(tag, index) in $store.getters.tagsViewList" :key="tag.fullPath" :to="{ path: tag.fullPath }">
+    }" v-for="(tag, index) in $store.getters.tagsViewList" :key="tag.fullPath" :to="{ path: tag.fullPath }"
+      @contextmenu.prevent="openMenu($event, index)">
       {{ tag.title }}
       <i v-show="!isActive(tag)" class="el-icon-close" @click.prevent.stop="onCloseClick(index)" />
     </router-link>
+
+    <context-menu v-show="visible" :style="menuStyle" :index="selectIndex" />
   </div>
 </template>
 
 <script setup>
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useStore } from 'vuex'
+import ContextMenu from './ContextMenu.vue'
+
 const route = useRoute()
 /**
  * 是否被选中
@@ -23,7 +30,45 @@ const isActive = tag => {
 /**
  * 关闭 tag 的点击事件
  */
-const onCloseClick = index => { }
+const store = useStore()
+const onCloseClick = index => {
+  store.commit('app/removeTagsView', {
+    type: 'index',
+    index
+  })
+}
+
+/**
+ * 鼠标右键
+ */
+const visible = ref(false)
+const menuStyle = ref({
+  left: 0,
+  top: 0
+})
+const selectIndex = ref(0)
+const openMenu = (e, index) => {
+  const { x, y } = e
+  menuStyle.value.left = x + 'px'
+  menuStyle.value.right = y + 'px'
+  selectIndex.value = index
+  visible.value = true
+}
+
+/**
+ * 关闭menu
+ */
+const closeMenu = () => {
+  visible.value = false
+}
+
+watch(visible, val => {
+  if (val) {
+    document.body.addEventListener('click', closeMenu)
+  } else {
+    document.body.removeEventListener('click', closeMenu)
+  }
+})
 </script>
 
 <style lang="scss" scoped>

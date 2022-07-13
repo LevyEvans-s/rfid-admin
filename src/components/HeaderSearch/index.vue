@@ -1,6 +1,6 @@
 <template>
   <div :class="{ show: isShow }" class="header-search">
-    <svg-icon class-name="search-icon" icon="search" @click.stop="onShowClick" />
+    <svg-icon id="guide-search" class-name="search-icon" icon="search" @click.stop="onShowClick" />
     <el-select ref="headerSearchSelectRef" class="header-search-select" v-model="search" filterable default-first-option
       remote placeholder="Search" :remote-method="querySearch" @change="onSelectChange">
       <el-option v-for="option in searchOptions" :key="option.item.path" :label="option.item.title.join(' > ')"
