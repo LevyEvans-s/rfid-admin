@@ -94,10 +94,10 @@ const onSelectChange = (val) => {
   router.push(val.path)
 }
 
-//  国际化
+// 国际化
 watchSwitchLang(() => {
   searchPool = computed(() => {
-    const routes = filterRouters(router.getRoutes)
+    const routes = filterRouters(router.getRoutes())
     return generateRoutes(routes)
   })
   initFuse(searchPool.value)
