@@ -25,7 +25,9 @@ const props = defineProps({
 const store = useStore()
 const router = useRouter()
 
-const onRefreshClick = () => { router.go(0) }
+const onRefreshClick = () => {
+  router.go(0)
+}
 
 const onCloseRightClick = () => {
   store.commit('app/removeTagsView', {
