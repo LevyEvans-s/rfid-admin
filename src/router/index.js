@@ -10,7 +10,7 @@ const privateRoutes = [
     component: layout,
     redirect: '/user/manage',
     meta: {
-      title: '用户',
+      title: 'user',
       icon: 'personnel'
     },
     children: [
@@ -18,7 +18,7 @@ const privateRoutes = [
         path: '/user/manage',
         component: () => import('@/views/user-manage/index'),
         meta: {
-          title: '用户管理',
+          title: 'userManage',
           icon: 'personnel-manage'
         }
       },
@@ -26,7 +26,7 @@ const privateRoutes = [
         path: '/user/role',
         component: () => import('@/views/role-list/index'),
         meta: {
-          title: '角色列表',
+          title: 'roleList',
           icon: 'role'
         }
       },
@@ -34,7 +34,7 @@ const privateRoutes = [
         path: '/user/permission',
         component: () => import('@/views/permission-list/index'),
         meta: {
-          title: '权限管理',
+          title: 'permissionList',
           icon: 'permission'
         }
       },
@@ -43,7 +43,7 @@ const privateRoutes = [
         name: 'userInfo',
         component: () => import('@/views/user-info/index'),
         meta: {
-          title: '角色信息'
+          title: 'userInfo'
         }
       },
       {
@@ -61,7 +61,7 @@ const privateRoutes = [
     component: layout,
     redirect: '/store/ranking',
     meta: {
-      title: '仓储管理',
+      title: 'storeManage',
       icon: 'store'
     },
     children: [
@@ -69,7 +69,7 @@ const privateRoutes = [
         path: '/store/storage',
         component: () => import('@/views/store-storage/index'),
         meta: {
-          title: '入库清单',
+          title: 'storeList',
           icon: 'storage-list'
         }
       }
@@ -91,7 +91,7 @@ const publicRoutes = [
         name: 'profile',
         component: () => import('@/views/profile/index'),
         meta: {
-          title: '个人中心',
+          title: 'profile',
           icon: 'el-icon-user'
         }
       },

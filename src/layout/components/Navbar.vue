@@ -3,6 +3,9 @@
     <hamburger class="hamburger-container" />
     <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <header-search class="right-menu-item hover-effect"></header-search>
+      <screenfull class="right-menu-item hover-effect" />
+      <theme-select class="right-menu-item hover-effect" />
       <lang-select class="right-menu-item hover-effect" />
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
@@ -13,10 +16,10 @@
         <template #dropdown>
           <el-dropdown-menu class="user-dropdown" @click="logout">
             <router-link to="/">
-              <el-dropdown-item> 首页 </el-dropdown-item>
+              <el-dropdown-item> {{ $t('msg.navBar.home') }} </el-dropdown-item>
             </router-link>
             <el-dropdown-item divided>
-              退出登录
+              {{ $t('msg.navBar.logout') }}
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>
@@ -31,6 +34,9 @@ import { useStore } from 'vuex'
 import Hamburger from '@/components/hamburger/index.vue'
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import LangSelect from '@/components/LangSelect/index.vue'
+import ThemeSelect from '@/components/ThemeSelect'
+import Screenfull from '@/components/Screenfull'
+import HeaderSearch from '@/components/HeaderSearch'
 
 const store = useStore()
 const logout = () => {

@@ -5,7 +5,13 @@
 </template>
 
 <script setup>
-import { } from 'vue'
+import { watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+watch(route, (to, from) => {
+  console.log(route)
+})
 </script>
 
 <style lang="scss" scoped>

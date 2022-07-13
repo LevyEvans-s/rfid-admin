@@ -20,7 +20,7 @@ export default {
   },
   route: {
     profile: 'Profile',
-    user: 'user',
+    user: 'User',
     excelImport: 'ExcelImport',
     userManage: 'EmployeeManage',
     userInfo: 'UserInfo',
@@ -30,7 +30,9 @@ export default {
     articleRanking: 'ArticleRanking',
     articleCreate: 'ArticleCreate',
     articleDetail: 'ArticleDetail',
-    articleEditor: 'ArticleEditor'
+    articleEditor: 'ArticleEditor',
+    storeManage: 'StoreManage',
+    storeList: 'StoreList'
   },
   toast: {
     switchLangSuccess: 'Switch Language Success'
@@ -45,6 +47,7 @@ export default {
     themeChange: 'Theme Change'
   },
   universal: {
+    title: 'remind',
     confirm: 'confirm',
     cancel: 'cancel'
   },

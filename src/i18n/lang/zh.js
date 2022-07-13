@@ -30,7 +30,9 @@ export default {
     articleRanking: '文章排名',
     articleCreate: '创建文章',
     articleDetail: '文章详情',
-    articleEditor: '文章编辑'
+    articleEditor: '文章编辑',
+    storeManage: '仓储管理',
+    storeList: '入库清单'
   },
   toast: {
     switchLangSuccess: '切换语言成功'
@@ -45,6 +47,7 @@ export default {
     themeChange: '主题更换'
   },
   universal: {
+    title: '提示',
     confirm: '确定',
     cancel: '取消'
   },
