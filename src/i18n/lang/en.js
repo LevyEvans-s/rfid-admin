@@ -85,18 +85,20 @@ export default {
     sidebarDesc: 'Project function menu'
   },
   profile: {
-    muted:
-      '"Vue3 rewrite vue-element-admin, realize the back-end front-end integrated solution" project demonstration',
-    introduce: 'Introduce',
-    projectIntroduction: 'Project Introduction',
-    projectFunction: 'Project Function',
-    feature: 'Feature',
-    chapter: 'Chapter',
-    author: 'Author',
-    name: 'Sunday',
-    job: 'A front-end development program',
-    Introduction:
-      'A senior technical expert, once worked in a domestic first-line Internet company, and has coordinated multiple large-scale projects with more than tens of millions of users. Committed to researching big front-end technology, he has been invited to participate in domestic front-end technology sharing sessions many times, such as: Google China Technology Sharing Session in 2018.'
+    muted: 'Intelligent test platform for concrete test block',
+    projectIntroduction: 'Platform Introduction',
+    detailUserInfo: 'Tester Detail',
+    // feature: 'Feature',
+    // chapter: 'Chapter',
+    // author: 'Author',
+    // name: 'Sunday',
+    // job: 'A front-end development program',
+    // Introduction:
+    //   'A senior technical expert, once worked in a domestic first-line Internet company, and has coordinated multiple large-scale projects with more than tens of millions of users. Committed to researching big front-end technology, he has been invited to participate in domestic front-end technology sharing sessions many times, such as: Google China Technology Sharing Session in 2018.'
+    todos: 'Todos',
+    storeData: 'StoreData',
+    notification: 'Notification',
+    info: 'Info'
   },
   userInfo: {
     print: 'Print',
@@ -126,7 +128,7 @@ export default {
     mobile: 'contact details',
     avatar: 'Avatar',
     role: 'Role',
-    openTime: 'Opening time',
+    openTime: 'Regist time',
     action: 'Operate',
     show: 'Check',
     showRole: 'Role',

@@ -7,7 +7,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://api.imooc-admin.lgdsunday.club/',
+        target: '  https://mock.mengxuegu.com/mock/62d014bf12622141e6caa20c/rfid-admin-mock',
         changeOrigin: true
       }
     }

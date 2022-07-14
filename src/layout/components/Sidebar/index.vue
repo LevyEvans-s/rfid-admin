@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="logo-container">
-      <el-avatar :size="logoHeight" shape="square" src="http://koto-marvelous.com/static/image/sakada.jpg" />
+      <svg-icon icon="rfid" font-size="40px" />
       <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
-        rfid-admin
+        混凝土试块检测平台
       </h1>
     </div>
     <el-scrollbar>
@@ -28,11 +28,10 @@ const logoHeight = 44
   justify-content: center;
 
   .logo-title {
-    margin-left: 10px;
     color: #fff;
     font-weight: 600;
     line-height: 50px;
-    font-size: 16px;
+    font-size: 13px;
     white-space: nowrap;
   }
 
