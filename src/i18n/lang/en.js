@@ -108,12 +108,11 @@ export default {
     nation: 'nationality',
     mobile: 'phone number',
     province: 'Place of residence',
+    serial: 'Employee ID',
     date: 'Entry Time',
     remark: 'Remark',
     address: 'contact address',
-    experience: 'Experience',
-    major: 'Professional',
-    glory: 'Glory',
+    site: 'Affiliated unit',
     foot: 'Signature:___________Date:___________'
   },
   uploadExcel: {
@@ -128,7 +127,7 @@ export default {
     mobile: 'contact details',
     avatar: 'Avatar',
     role: 'Role',
-    openTime: 'Regist time',
+    openTime: 'Open time',
     action: 'Operate',
     show: 'Check',
     showRole: 'Role',
@@ -162,27 +161,5 @@ export default {
     name: 'Authority name',
     mark: 'Authority ID',
     desc: 'Permission description'
-  },
-  article: {
-    ranking: 'Ranking',
-    title: 'Title',
-    author: 'Author',
-    publicDate: 'release time',
-    desc: 'brief introduction',
-    action: 'operate',
-    dynamicTitle: 'Dynamic display',
-    show: 'check',
-    remove: 'delete',
-    edit: 'editor',
-    dialogTitle1: 'Are you sure you want to delete the article ',
-    dialogTitle2: ' NS?',
-    removeSuccess: 'Article deleted successfully',
-    titlePlaceholder: 'Please enter the title of the article',
-    markdown: 'Markdown',
-    richText: 'Rich Text',
-    commit: 'commit',
-    createSuccess: 'The article was created successfully',
-    editorSuccess: 'Article modified successfully',
-    sortSuccess: 'Article ranking modified successfully'
   }
 }

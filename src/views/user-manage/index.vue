@@ -3,8 +3,8 @@
     <!-- 导入导出 -->
     <el-card class="header">
       <div>
-        <el-button type="primary"> {{ $t('msg.excel.importExcel') }}</el-button>
-        <el-button type="success">
+        <el-button type="primary" @click="onImportExcelClick"> {{ $t('msg.excel.importExcel') }}</el-button>
+        <el-button type="success" @click="onToExcelClick">
           {{ $t('msg.excel.exportExcel') }}
         </el-button>
       </div>
@@ -48,32 +48,38 @@
         </el-table-column>
         <!-- 操作 -->
         <el-table-column :label="$t('msg.excel.action')" fixed="right" width="260">
-          <template #default>
-            <el-button type="primary" size="mini">{{
+          <template #default="{ row }">
+            <el-button type="primary" size="mini" @click="onShowClick(row.id)">{{
                 $t('msg.excel.show')
             }}</el-button>
             <el-button type="info" size="mini">{{
                 $t('msg.excel.showRole')
             }}</el-button>
-            <el-button type="danger" size="mini">{{
+            <el-button type="danger" size="mini" @click="onRemoveClick(row)">{{
                 $t('msg.excel.remove')
             }}</el-button>
           </template>
         </el-table-column>
       </el-table>
       <!-- 分页 -->
-      <el-pagination class="pagination" @update:page-size="handleSizeChange" @update:current-page="handleCurrentChange"
-        v-model:current-page="page" :page-sizes="[2, 5, 10, 20]" v-model:page-size="size"
+      <el-pagination class="pagination" @size-change="handleSizeChange" @current-change="handleCurrentChange"
+        v-model:currentPage="page" :page-sizes="[2, 5, 10, 20]" v-model:page-size="size"
         layout="total, sizes, prev, pager, next, jumper" :total="total">
       </el-pagination>
     </el-card>
+
+    <export-to-excel v-model="exportToExcelVisible"></export-to-excel>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { getUserManageList } from '@/api/user-manage'
+import { ref, onActivated } from 'vue'
+import { getUserManageList, deleteUser } from '@/api/user-manage'
 import { watchSwitchLang } from '@/utils/i18n'
+import { useRouter } from 'vue-router'
+import { ElMessageBox, ElMessage } from 'element-plus'
+import { useI18n } from 'vue-i18n'
+import ExportToExcel from './componennts/Export2Excel.vue'
 
 // 数据相关
 const tableData = ref([])
@@ -88,11 +94,11 @@ const getListData = async () => {
     size: size.value
   })
   tableData.value = result.list
-  total.value = result.value
+  total.value = result.total
 }
 getListData()
 watchSwitchLang(getListData)
-
+onActivated(getListData) // 当user-manage被重新激活时调用 清除缓存 刷新表格数据
 // 分页相关
 /**
  * size 改变触发
@@ -108,6 +114,47 @@ const handleSizeChange = currentSize => {
 const handleCurrentChange = currentPage => {
   page.value = currentPage
   getListData()
+}
+
+/**
+ * 查看按钮点击事件
+ */
+const onShowClick = id => {
+  router.push(`/user/info/${id}`)
+}
+
+/**
+ * 删除按钮点击事件
+ */
+const i18n = useI18n()
+const onRemoveClick = row => {
+  ElMessageBox.confirm(
+    i18n.t('msg.excel.dialogTitle1') +
+    row.username +
+    i18n.t('msg.excel.dialogTitle2'),
+    {
+      type: 'warning'
+    }
+  ).then(async () => {
+    await deleteUser(row._id)
+    ElMessage.success(i18n.t('msg.excel.removeSuccess'))
+    // 重新渲染数据
+    getListData()
+  })
+}
+
+// excel导入按钮点击事件
+const router = useRouter()
+const onImportExcelClick = () => {
+  router.push('/user/import')
+}
+
+/**
+ * excel 导出点击事件
+ */
+const exportToExcelVisible = ref(false)
+const onToExcelClick = () => {
+  exportToExcelVisible.value = true
 }
 </script>
 
