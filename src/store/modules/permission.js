@@ -4,7 +4,6 @@ import { publicRoutes, privateRoutes } from '@/router'
 export default {
   namespaced: true,
   state: {
-    // 路由表：初始拥有静态路由权限
     routes: []
   },
   mutations: {
@@ -13,7 +12,6 @@ export default {
      */
     setRoutes(state, newRoutes) {
       // 永远在静态路由的基础上增加新路由
-      console.log(publicRoutes)
       state.routes = [...publicRoutes, ...newRoutes]
     }
   },

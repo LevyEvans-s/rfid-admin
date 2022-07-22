@@ -18,6 +18,7 @@ export default {
     <b>注意：导入用户区分中英文库！！！！</b>
     `
   },
+  title: '混凝土试块数据平台',
   route: {
     profile: '个人中心',
     user: '用户',
@@ -26,11 +27,6 @@ export default {
     userInfo: '员工信息',
     roleList: '角色列表',
     permissionList: '权限列表',
-    article: '文章',
-    articleRanking: '文章排名',
-    articleCreate: '创建文章',
-    articleDetail: '文章详情',
-    articleEditor: '文章编辑',
     storeManage: '仓储管理',
     storeList: '入库清单'
   },
@@ -87,14 +83,12 @@ export default {
   profile: {
     muted: ' 混凝土试块智能检测平台',
     projectIntroduction: '平台介绍',
-    detailUserInfo: '试验员详情',
-    // feature: '功能',
-    // chapter: '章节',
-    // author: '作者',
-    // name: 'Sunday',
-    // job: '一个前端开发程序猿',
-    // Introduction:
-    //   '高级技术专家，曾就职于国内一线互联网公司，统筹过的多个大型项目用户数已过千万级。致力于研究大前端技术，多次受邀参加国内前端技术分享会，如：2018 年 Google 中国技术分享会。'
+    detailUserInfo: '个人详情',
+    name: '姓名',
+    age: '年龄',
+    id: 'ID',
+    mobile: '手机号',
+    site: '所属单位',
     todos: '待办事项',
     storeData: '仓库数据',
     notification: '通知',
@@ -137,12 +131,22 @@ export default {
     title: '导出为 excel',
     placeholder: 'excel 文件名称',
     defaultName: '员工管理表',
+    defaultName2: '试块信息清单',
     close: '取 消',
     confirm: '导 出',
     importSuccess: ' 条员工数据导入成功',
     dialogTitle1: '确定要删除用户 ',
     dialogTitle2: ' 吗？',
-    roleDialogTitle: '配置角色'
+    dialogTitle3: ' 确定删除试块 ',
+    roleDialogTitle: '配置角色',
+    blockId: '试块编号',
+    tester: '采样人',
+    testDate: '采样日期',
+    testPlace: '采样地点',
+    compressive: '抗压指数',
+    penetration: '抗渗透值',
+    rate: '合格率',
+    edit: '编辑'
   },
   role: {
     buttonTxt: '新增角色',
@@ -161,5 +165,16 @@ export default {
     name: '权限名称',
     mark: '权限标识',
     desc: '权限描述'
+  },
+  form: {
+    title: '编辑信息',
+    blockId: '试块编号',
+    tester: '采样人',
+    testDate: '采样日期',
+    testPlace: '采样地点',
+    compressive: '抗压指数',
+    penetration: '抗渗透值',
+    rate: '合格率',
+    updateFormSuccess: '更新数据成功'
   }
 }

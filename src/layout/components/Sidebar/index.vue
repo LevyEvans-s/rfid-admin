@@ -3,7 +3,7 @@
     <div class="logo-container">
       <svg-icon icon="rfid" font-size="40px" />
       <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
-        混凝土试块检测平台
+        {{ $t('msg.title') }}
       </h1>
     </div>
     <el-scrollbar>

@@ -15,11 +15,12 @@ import { filterRouters, generateMenus } from '@/utils/route'
 import SidebarItem from './SidebarItem.vue'
 
 const router = useRouter()
+// console.log(router.getRoutes())
 const routes = computed(() => {
   const filterRoutes = filterRouters(router.getRoutes())
   return generateMenus(filterRoutes)
 })
-
+// console.log(routes.value)
 // 默认激活项
 const route = useRoute()
 const activeMenu = computed(() => {

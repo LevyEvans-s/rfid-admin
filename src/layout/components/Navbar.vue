@@ -11,7 +11,7 @@
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <el-avatar shape="square" :size="40" src="http://koto-marvelous.com/static/image/sakada.jpg"></el-avatar>
+          <el-avatar shape="square" :size="40" :src="$store.getters.userInfo.avatar"></el-avatar>
           <i class="el-icon-s-tools"></i>
         </div>
         <template #dropdown>

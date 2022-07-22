@@ -1,6 +1,6 @@
 import store from '@/store'
 import axios from 'axios'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElStep } from 'element-plus'
 import { isTimeout } from './auth'
 
 const service = axios.create({
@@ -43,7 +43,7 @@ service.interceptors.response.use(
     if (
       error.response &&
       error.response.data &&
-      error.response.data.code === 401
+      error.response.data.verifyTokenCode === 401
     ) {
       // token超时
       store.dispatch('user/logout')

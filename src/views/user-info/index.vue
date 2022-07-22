@@ -12,10 +12,10 @@
           <!-- 头部渲染表格 -->
           <el-descriptions :column="2" border>
             <el-descriptions-item :label="$t('msg.userInfo.name')">{{
-                detailData.username
+                detailData.realName
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.sex')">{{
-                detailData.gender
+                detailData.sex
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.nation')">{{
                 detailData.nationality
@@ -24,13 +24,13 @@
                 detailData.mobile
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.province')">{{
-                detailData.province
+                detailData.residence
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.date')">{{
                 $filters.dateFilter(detailData.openTime)
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.serial')" :span="2">
-              {{ detailData.serial }}
+              {{ detailData.workerId }}
             </el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.site')" :span="2">
               {{ detailData.site }}
@@ -81,7 +81,7 @@ const printObj = {
   // 打印区域
   id: 'userInfoBox',
   // 打印标题
-  popTitle: '混凝土试块检测平台',
+  popTitle: '混凝土试块检测平台员工信息',
   // 打印前
   beforeOpenCallback(vue) {
     printLoading.value = true

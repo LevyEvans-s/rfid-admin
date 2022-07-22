@@ -2,7 +2,7 @@
   <div class="my-container">
     <el-row>
       <el-col :span="6">
-        <project-card class="user-card"></project-card>
+        <project-card class="user-card" :userInfo="$store.getters.userInfo"></project-card>
       </el-col>
       <el-col :span="18">
         <el-card>
@@ -31,7 +31,7 @@ import TodoList from './components/TodoList.vue'
 
 import { ref } from 'vue'
 
-const activeName = ref('feature')
+const activeName = ref('todos')
 </script>
 
 <style lang="scss" scoped>

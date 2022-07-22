@@ -3,12 +3,14 @@ import layout from '@/layout/index'
 import PermissionListRouter from './modules/PermissionList'
 import RoleListRouter from './modules/RoleList'
 import UserManageRouter from './modules/UserManage'
+import StoreListRouter from './modules/StoreList'
 import store from '@/store'
 
 export const privateRoutes = [
   RoleListRouter,
   UserManageRouter,
-  PermissionListRouter
+  PermissionListRouter,
+  StoreListRouter
 ]
 
 /**
@@ -57,7 +59,7 @@ const router = createRouter({
 })
 
 /**
- * 初始化路由表
+ * 重置路由表
  */
 export function resetRouter() {
   if (

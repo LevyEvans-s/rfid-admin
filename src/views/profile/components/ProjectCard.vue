@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <!-- 检测员详细信息 -->
+    <!--个人详细信息 -->
     <div class="project-bio-section">
       <div class="project-bio-section-header">
         <svg-icon icon="tester" /><span>{{
@@ -47,9 +47,26 @@
         }}</span>
       </div>
       <div class="project-bio-section-body">
-        <div class="progress-item" v-for="item in userInfo" :key="item.id">
-          <div>{{ item.title }}</div>
-          <el-progress :percentage="item.percentage" status="success" />
+        <div class="progress-item">
+          <div>{{ $t('msg.profile.name') }}:{{ userInfo.realName }}</div>
+          <el-progress status="success" />
+        </div>
+        <div class="progress-item">
+          <div>{{ $t('msg.profile.age') }}:{{ userInfo.age }}</div>
+          <el-progress status="success" />
+        </div>
+        <div class="progress-item">
+          <div>{{ $t('msg.profile.id') }}:{{ userInfo.workerId }}</div>
+          <el-progress status="success" />
+        </div>
+        <div class="progress-item">
+          <div>{{ $t('msg.profile.mobile') }}:{{ userInfo.mobile }}</div>
+          <el-progress status="success" />
+        </div>
+        <div class="progress-item">
+          <div>{{ $t('msg.profile.site') }}:</div>
+          <div>{{ userInfo.site }}</div>
+          <el-progress status="success" />
         </div>
       </div>
     </div>

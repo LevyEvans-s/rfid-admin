@@ -139,7 +139,8 @@ const onRemoveClick = row => {
       type: 'warning'
     }
   ).then(async () => {
-    await deleteUser(row._id)
+    // console.log(row)
+    await deleteUser(row.id)
     ElMessage.success(i18n.t('msg.excel.removeSuccess'))
     // 重新渲染数据
     getListData()

@@ -17,8 +17,7 @@ const router = useRouter()
  * 数据解析成功之后的回调
  */
 const onSuccess = async ({ header, results }) => {
-  const updateData = generateData(results)
-  console.log(updateData)
+  const updateData = generateData(results) // 解析excel成功后 生成json格式数据 发送请求
   await userBatchImport(updateData)
   ElMessage.success({
     message: results.length + i18n.t('msg.excel.importSuccess'),

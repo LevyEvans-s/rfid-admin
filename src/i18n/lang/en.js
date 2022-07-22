@@ -18,6 +18,7 @@ export default {
      <b>Note: Import user-discriminatory Chinese and English libraries! ! ! ! </b>
     `
   },
+  title: 'Building test block data platform',
   route: {
     profile: 'Profile',
     user: 'User',
@@ -26,11 +27,6 @@ export default {
     userInfo: 'UserInfo',
     roleList: 'RoleList',
     permissionList: 'PermissionList',
-    article: 'article',
-    articleRanking: 'ArticleRanking',
-    articleCreate: 'ArticleCreate',
-    articleDetail: 'ArticleDetail',
-    articleEditor: 'ArticleEditor',
     storeManage: 'StoreManage',
     storeList: 'StoreList'
   },
@@ -87,14 +83,12 @@ export default {
   profile: {
     muted: 'Intelligent test platform for concrete test block',
     projectIntroduction: 'Platform Introduction',
-    detailUserInfo: 'Tester Detail',
-    // feature: 'Feature',
-    // chapter: 'Chapter',
-    // author: 'Author',
-    // name: 'Sunday',
-    // job: 'A front-end development program',
-    // Introduction:
-    //   'A senior technical expert, once worked in a domestic first-line Internet company, and has coordinated multiple large-scale projects with more than tens of millions of users. Committed to researching big front-end technology, he has been invited to participate in domestic front-end technology sharing sessions many times, such as: Google China Technology Sharing Session in 2018.'
+    detailUserInfo: 'Personel Detail',
+    name: 'name',
+    age: 'age',
+    id: 'ID',
+    mobile: 'mobile',
+    site: 'site',
     todos: 'Todos',
     storeData: 'StoreData',
     notification: 'Notification',
@@ -137,12 +131,22 @@ export default {
     title: 'Export to excel',
     placeholder: 'excel file name',
     defaultName: 'Staff Management Form',
+    defaultName2: 'Test Block List',
     close: 'Cancel',
     confirm: 'Export',
     importSuccess: ' Employee data imported successfully',
     dialogTitle1: 'Are you sure you want to delete the user ',
     dialogTitle2: ' Is it?',
-    roleDialogTitle: 'Configure roles'
+    dialogTitle3: ' Are you sure you want to delete the block ',
+    roleDialogTitle: 'Configure roles',
+    blockId: 'Block ID',
+    tester: 'Tester',
+    testDate: 'Test Date',
+    testPlace: 'Test Place',
+    compressive: 'Compressive strength value',
+    penetration: 'Penetration resistance value',
+    rate: 'Percent Of Pass',
+    edit: 'Edit'
   },
   role: {
     buttonTxt: 'New Role',
@@ -161,5 +165,16 @@ export default {
     name: 'Authority name',
     mark: 'Authority ID',
     desc: 'Permission description'
+  },
+  form: {
+    title: 'Edit Info',
+    blockId: 'Block ID',
+    tester: 'Tester',
+    testDate: 'Test Date',
+    testPlace: 'Test Place',
+    compressive: 'Compressive strength value',
+    penetration: 'Penetration resistance value',
+    rate: 'Percent Of Pass',
+    updateFormSuccess: 'Update data success'
   }
 }

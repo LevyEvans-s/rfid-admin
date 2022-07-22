@@ -32,8 +32,6 @@ export default {
         })
           .then(data => {
             this.commit('user/setToken', data.token)
-            // 登录成功跳转到首页
-            router.push('/')
             // 记录登录时间戳 用于前端介入用户被动退出
             setTimeStamp()
             resolve()
@@ -59,7 +57,7 @@ export default {
       this.commit('user/setUserInfo', {})
       // 删除本地token缓存
       removeAllItem()
-      // TODO:清理权限相关配置
+      // TODO:清理权限相关配置(重置路由表)
       resetRouter()
       router.push('/login')
     }
