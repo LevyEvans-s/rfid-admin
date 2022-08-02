@@ -74,7 +74,7 @@ const defaultProps = {
 const treeRef = ref(null)
 const getRolePermission = async () => {
   const checkedKeys = await rolePermission(props.roleId)
-  treeRef.value.setCheckedKeys(checkedKeys)
+  treeRef.value.setCheckedKeys(checkedKeys.permission)
 }
 watch(
   () => props.roleId,

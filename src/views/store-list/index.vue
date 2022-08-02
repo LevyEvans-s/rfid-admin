@@ -110,9 +110,6 @@ const handleCurrentChange = currentPage => {
 
 // excel导入按钮点击事件
 const router = useRouter()
-const onImportExcelClick = () => {
-  router.push('/user/import')
-}
 
 /**
  * excel 导出点击事件

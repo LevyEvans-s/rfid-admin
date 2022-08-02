@@ -9,8 +9,7 @@
     <div class="user-profile">
       <!-- 头像 -->
       <div class="box-center">
-        <pan-thumb image="http://koto-marvelous.com/static/image/sakada.jpg" :height="'100px'" :width="'100px'"
-          :hoverable="false">
+        <pan-thumb :image="userInfo.avatar" :height="'100px'" :width="'100px'" :hoverable="false">
           <div>Hello</div>
           {{ $store.getters.userInfo.title }}
         </pan-thumb>

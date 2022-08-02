@@ -18,7 +18,7 @@ service.interceptors.request.use(config => {
       store.dispatch('user/logout')
       return Promise.reject(new Error('token失效,请重新登录'))
     }
-    config.headers.Authorization = `Bearer ${store.getters.token}`
+    config.headers.Authorization = `${store.getters.token}`
   }
   return config
 }, error => {

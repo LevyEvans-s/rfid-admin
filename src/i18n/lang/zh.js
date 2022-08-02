@@ -3,7 +3,7 @@ export default {
     title: '用户登录',
     loginBtn: '登录',
     usernameRule: '用户名为必填项',
-    passwordRule: '密码不能少于6位',
+    passwordRule: '密码不能少于5位',
     desc: `
     测试权限账号：<br />
     提供三种权限账号：<br />

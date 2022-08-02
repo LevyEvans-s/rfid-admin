@@ -7,14 +7,8 @@
       <el-col :span="18">
         <el-card>
           <el-tabs v-model="activeName">
-            <el-tab-pane :label="$t('msg.profile.todos')" name="todos">
-              <todo-list />
-            </el-tab-pane>
             <el-tab-pane :label="$t('msg.profile.storeData')" name="storeData">
-              <!--  -->
-            </el-tab-pane>
-            <el-tab-pane :label="$t('msg.profile.notification')" name="notification">
-              <!--  -->
+              <store-data></store-data>
             </el-tab-pane>
           </el-tabs>
         </el-card>
@@ -25,13 +19,11 @@
 
 <script setup>
 import ProjectCard from './components/ProjectCard.vue'
-import notification from './components/Notification.vue'
 import StoreData from './components/StoreData.vue'
-import TodoList from './components/TodoList.vue'
 
 import { ref } from 'vue'
 
-const activeName = ref('todos')
+const activeName = ref('storeData')
 </script>
 
 <style lang="scss" scoped>

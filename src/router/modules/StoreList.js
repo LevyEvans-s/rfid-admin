@@ -4,7 +4,7 @@ export default {
   path: '/store',
   component: layout,
   redirect: '/store/list',
-  name: 'storeList',
+  name: 'storeManage',
   meta: {
     title: 'storeManage',
     icon: 'store'

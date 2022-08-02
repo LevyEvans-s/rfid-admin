@@ -1,6 +1,6 @@
 <template>
   <div class="">
-
+    暂无数据
   </div>
 </template>
 

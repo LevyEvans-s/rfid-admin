@@ -5,12 +5,13 @@ function resolve(dir) {
 
 module.exports = {
   devServer: {
-    proxy: {
-      '/api': {
-        target: '  https://mock.mengxuegu.com/mock/62d014bf12622141e6caa20c/rfid-admin-mock',
-        changeOrigin: true
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: ' https://mock.mengxuegu.com/mock/62d014bf12622141e6caa20c/rfid-admin-mock',
+    //     changeOrigin: true
+    //   }
+    // }
+    proxy: 'http://1.15.242.140:8857'
   },
   chainWebpack(config) {
     // 设置 svg-sprite-loader
