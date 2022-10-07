@@ -1,17 +1,23 @@
 <template>
-  <el-dialog :title="$t('msg.form.title')" :model-value="formVisible" @close="closed">
-    <el-form label-position="right" label-width="80px">
+  <el-dialog :title="$t('msg.form.title')" :model-value="formVisible" @close="closed" class="dialog">
+    <el-form label-position="right" label-width="100px">
       <el-form-item :label="$t('msg.form.blockId')">
-        <el-input style="width: 500px" v-model="formData.block_id" />
+        <el-input style="width: 500px" v-model="formData.blockId" />
+      </el-form-item>
+      <el-form-item :label="$t('msg.form.company')">
+        <el-input style="width: 200px" v-model="formData.company" />
       </el-form-item>
       <el-form-item :label="$t('msg.form.tester')">
         <el-input style="width: 200px" v-model="formData.tester" />
       </el-form-item>
+      <el-form-item :label="$t('msg.form.testerId')">
+        <el-input style="width: 200px" v-model="formData.testerId" />
+      </el-form-item>
       <el-form-item :label="$t('msg.form.testDate')">
-        <el-date-picker type="date" v-model="formData.test_date" placeholder="Pick a date" style="width: 500px" />
+        <el-date-picker type="date" v-model="formData.testDate" placeholder="Pick a date" style="width: 500px" />
       </el-form-item>
       <el-form-item :label="$t('msg.form.testPlace')">
-        <el-input style="width: 500px" v-model="formData.test_place" />
+        <el-input style="width: 500px" v-model="formData.testPlace" />
       </el-form-item>
       <el-form-item :label="$t('msg.form.compressive')">
         <el-input style="width: 200px" v-model="formData.compressive" />
@@ -22,6 +28,9 @@
       <el-form-item :label="$t('msg.form.rate')">
         <el-input style="width: 200px" v-model="formData.rate" />
       </el-form-item>
+      <div class="img">
+        <el-image style="width: 200px; height: 300px" :src="formData.photo" :fit="fit" />
+      </div>
     </el-form>
     <template #footer>
       <span class="dialog-footer">
@@ -69,7 +78,7 @@ const closed = () => {
 
 const i18n = useI18n()
 const onConfirm = async () => {
-  await updateBlock(props.blockData.id, props.blockData)
+  await updateBlock(props.blockData.id, formData.value)
   ElMessage.success(i18n.t('msg.form.updateFormSuccess'))
   closed()
   // 更新数据成功
@@ -78,4 +87,13 @@ const onConfirm = async () => {
 </script>
 
 <style lang="scss" scoped>
+.dialog {
+  position: relative;
+}
+
+.img {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+}
 </style>

@@ -28,7 +28,8 @@ export default {
     roleList: '角色列表',
     permissionList: '权限列表',
     storeManage: '仓储管理',
-    storeList: '入库清单'
+    storeList: '入库清单',
+    storeInfo: '试块信息'
   },
   toast: {
     switchLangSuccess: '切换语言成功'
@@ -139,14 +140,14 @@ export default {
     dialogTitle2: ' 吗？',
     dialogTitle3: ' 确定删除试块 ',
     roleDialogTitle: '配置角色',
-    blockId: '试块编号',
-    tester: '采样人',
-    testDate: '采样日期',
-    testPlace: '采样地点',
-    compressive: '抗压指数',
-    penetration: '抗渗透值',
-    rate: '合格率',
-    edit: '编辑'
+    blockId: '样品编号',
+    tester: '试验人',
+    testerId: '试验人工号',
+    testDate: '应检日期',
+    testPlace: '试验地点',
+    company: '委托单位',
+    edit: '编辑',
+    check: '查看'
   },
   role: {
     buttonTxt: '新增角色',
@@ -170,11 +171,39 @@ export default {
     title: '编辑信息',
     blockId: '试块编号',
     tester: '采样人',
+    testerId: '采样人工号',
     testDate: '采样日期',
     testPlace: '采样地点',
     compressive: '抗压指数',
     penetration: '抗渗透值',
     rate: '合格率',
-    updateFormSuccess: '更新数据成功'
+    updateFormSuccess: '更新数据成功',
+    company: '所属单位'
+  },
+  storeInfo: {
+    title: '试块信息',
+    print: '打印',
+    submit: '提交修改',
+    compressive: '抗压指数',
+    penetration: '抗渗透值',
+    rate: '合格率',
+    company: '委托单位',
+    isRecycle: '是否回收',
+    status: '样品状态',
+    category: '项目品种',
+    strengthGrade: '强度等级',
+    makeTime: '制作日期',
+    requestDays: '要求龄期',
+    testDate: '应检日期',
+    condition: '养护条件',
+    specification: '规格型号',
+    part: '代表部位',
+    blockId: '样品编号',
+    tester: '试验人',
+    testerId: '试验人工号',
+    testPlace: '试验地点',
+    remark: '备注',
+    notion_param1: '说明',
+    notion_param2: '委托单位和样品的有关信息由委托方填写并对其真实性负责；样品状态由检测（试验）单位业务受理人填写；其他信息由双方商定。样品资料（如说明书、见证资料、抽样单等）委托方须在委托时即时提供'
   }
 }

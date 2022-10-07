@@ -17,6 +17,15 @@ export default {
         title: 'storeList',
         icon: 'store-list'
       }
+    },
+    {
+      path: '/store/info/:id',
+      name: 'storeInfo',
+      component: () => import('@/views/store-info/index'),
+      props: true,
+      meta: {
+        title: 'storeInfo'
+      }
     }
   ]
 }

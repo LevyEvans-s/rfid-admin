@@ -12,22 +12,22 @@
           <!-- 头部渲染表格 -->
           <el-descriptions :column="2" border>
             <el-descriptions-item :label="$t('msg.userInfo.name')">{{
-                detailData.realName
+            detailData.realName
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.sex')">{{
-                detailData.sex
+            detailData.sex
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.nation')">{{
-                detailData.nationality
+            detailData.nationality
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.mobile')">{{
-                detailData.mobile
+            detailData.mobile
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.province')">{{
-                detailData.residence
+            detailData.residence
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.date')">{{
-                $filters.dateFilter(detailData.openTime)
+            $filters.dateFilter(detailData.openTime)
             }}</el-descriptions-item>
             <el-descriptions-item :label="$t('msg.userInfo.serial')" :span="2">
               {{ detailData.workerId }}

@@ -2,7 +2,7 @@ import router from './router'
 import store from './store'
 
 // 白名单
-const whiteList = ['/login', '/user', '/user/manage', '/profile', '/user/permission', '/user/role', '/user/import', '/user/info/1']
+const whiteList = ['/login']
 /**
  * 路由前置守卫
  */
@@ -16,7 +16,9 @@ router.beforeEach(async (to, from, next) => {
     } else {
       // 判断用户信息是否存在，如果不存在，则获取用户信息
       if (!store.getters.hasUserInfo) {
-        const { permission } = await store.dispatch('user/getUserInfo')
+        const {
+          permission
+        } = await store.dispatch('user/getUserInfo')
         // 处理用户权限，筛选出需要添加的权限
         const filterRoutes = await store.dispatch(
           'permission/filterRoutes',

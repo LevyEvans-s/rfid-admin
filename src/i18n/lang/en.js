@@ -28,7 +28,8 @@ export default {
     roleList: 'RoleList',
     permissionList: 'PermissionList',
     storeManage: 'StoreManage',
-    storeList: 'StoreList'
+    storeList: 'StoreList',
+    storeInfo: 'StoreInfo'
   },
   toast: {
     switchLangSuccess: 'Switch Language Success'
@@ -141,12 +142,15 @@ export default {
     roleDialogTitle: 'Configure roles',
     blockId: 'Block ID',
     tester: 'Tester',
+    testerId: 'Tester ID',
     testDate: 'Test Date',
     testPlace: 'Test Place',
     compressive: 'Compressive strength value',
     penetration: 'Penetration resistance value',
     rate: 'Percent Of Pass',
-    edit: 'Edit'
+    edit: 'Edit',
+    check: 'Check',
+    company: 'Company'
   },
   role: {
     buttonTxt: 'New Role',
@@ -170,11 +174,17 @@ export default {
     title: 'Edit Info',
     blockId: 'Block ID',
     tester: 'Tester',
+    testerId: 'Tester ID',
     testDate: 'Test Date',
     testPlace: 'Test Place',
     compressive: 'Compressive strength value',
     penetration: 'Penetration resistance value',
     rate: 'Percent Of Pass',
-    updateFormSuccess: 'Update data success'
+    updateFormSuccess: 'Update data success',
+    company: 'Company'
+  },
+  storeInfo: {
+    title: 'block information',
+    print: 'print'
   }
 }

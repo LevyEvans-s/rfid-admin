@@ -15,37 +15,34 @@
         <!-- 索引 -->
         <el-table-column label="#" type="index" />
         <!-- 试块编号 -->
-        <el-table-column prop="block_id" :label="$t('msg.excel.blockId')">
+        <el-table-column prop="blockId" :label="$t('msg.excel.blockId')">
+        </el-table-column>
+        <!-- 所属单位 -->
+        <el-table-column prop="company" :label="$t('msg.excel.company')">
         </el-table-column>
         <!-- 采样人 -->
         <el-table-column prop="tester" :label="$t('msg.excel.tester')">
         </el-table-column>
+        <!-- 采样人工号 -->
+        <el-table-column prop="testerId" :label="$t('msg.excel.testerId')">
+        </el-table-column>
         <!-- 采样日期 -->
-        <el-table-column prop="test_date" :label="$t('msg.excel.testDate')">
+        <el-table-column prop="testDate" :label="$t('msg.excel.testDate')">
           <template #default="{ row }">
-            {{ $filters.dateFilter(row.test_date) }}
+            {{ $filters.dateFilter(row.testDate) }}
           </template>
         </el-table-column>
         <!-- 采样地点 -->
-        <el-table-column prop="test_place" :label="$t('msg.excel.testPlace')">
-        </el-table-column>
-        <!-- 抗压指数 -->
-        <el-table-column prop="compressive" :label="$t('msg.excel.compressive')">
-        </el-table-column>
-        <!-- 抗渗透值 -->
-        <el-table-column prop="penetration" :label="$t('msg.excel.penetration')">
-        </el-table-column>
-        <!-- 合格率 -->
-        <el-table-column prop="rate" :label="$t('msg.excel.rate')">
+        <el-table-column prop="testPlace" :label="$t('msg.excel.testPlace')">
         </el-table-column>
         <!-- 操作 -->
         <el-table-column :label="$t('msg.excel.action')" fixed="right" width="260">
           <template #default="{ row }">
-            <el-button type="primary" size="mini" @click="onShowClick(row)">{{
-                $t('msg.excel.edit')
+            <el-button type="primary" size="mini" @click="onShowClick(row.blockId)">{{
+            $t('msg.excel.check')
             }}</el-button>
             <el-button type="danger" size="mini" @click="onRemoveClick(row)" v-permission="['removeUser']">{{
-                $t('msg.excel.remove')
+            $t('msg.excel.remove')
             }}</el-button>
           </template>
         </el-table-column>
@@ -58,21 +55,21 @@
     </el-card>
 
     <export-to-excel v-model="exportToExcelVisible"></export-to-excel>
-    <storage-form v-model="formVisible" :blockData="blockData" @updateFormVisible="updateFormVisible"
-      @updateStore="getListData"></storage-form>
+    <!-- <storage-form v-model="formVisible" :blockData="blockData" @updateFormVisible="updateFormVisible"
+      @updateStore="getListData"></storage-form> -->
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 import { getStoreList, deleteBlock } from '@/api/storage'
 import { watchSwitchLang } from '@/utils/i18n'
 import ExportToExcel from './components/Export2Excel.vue'
 import { useI18n } from 'vue-i18n'
 import { ElMessageBox, ElMessage } from 'element-plus'
-import StorageForm from './components/StorageForm.vue'
-import { dateFilter } from '@/filter'
+import { useRouter } from 'vue-router'
+// import StorageForm from './components/StorageForm.vue'
+// import { dateFilter } from '@/filter'
 
 // 数据相关
 const tableData = ref([])
@@ -108,9 +105,6 @@ const handleCurrentChange = currentPage => {
   getListData()
 }
 
-// excel导入按钮点击事件
-const router = useRouter()
-
 /**
  * excel 导出点击事件
  */
@@ -126,7 +120,7 @@ const i18n = useI18n()
 const onRemoveClick = row => {
   ElMessageBox.confirm(
     i18n.t('msg.excel.dialogTitle3') +
-    row.block_id +
+    row.blockId +
     i18n.t('msg.excel.dialogTitle2'),
     {
       type: 'warning'
@@ -142,10 +136,14 @@ const onRemoveClick = row => {
 // 表单修改
 const blockData = ref({})
 const formVisible = ref(false)
-const onShowClick = (row) => {
-  row.test_date = dateFilter(row.test_date)
-  blockData.value = row
-  formVisible.value = true
+
+const router = useRouter()
+
+const onShowClick = (id) => {
+  // row.testDate = dateFilter(row.testDate)
+  // blockData.value = row
+  // formVisible.value = true
+  router.push(`/store/info/${id}`)
 }
 
 const updateFormVisible = () => {

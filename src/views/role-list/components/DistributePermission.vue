@@ -40,9 +40,10 @@ const emits = defineEmits(['update:modelValue'])
  */
 const i18n = useI18n()
 const onConfirm = async () => {
+  const permissions = treeRef.value.getCheckedKeys().map(item => item.toString())
   await distributePermission({
     roleId: props.roleId,
-    permissions: treeRef.value.getCheckedKeys()
+    permissions
   })
   ElMessage.success(i18n.t('msg.role.updateRoleSuccess'))
   closed()
