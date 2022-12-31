@@ -139,11 +139,11 @@ const formVisible = ref(false)
 
 const router = useRouter()
 
-const onShowClick = (id) => {
+const onShowClick = (blockId) => {
   // row.testDate = dateFilter(row.testDate)
   // blockData.value = row
   // formVisible.value = true
-  router.push(`/store/info/${id}`)
+  router.push(`/store/info/${blockId}`)
 }
 
 const updateFormVisible = () => {

@@ -18,17 +18,13 @@ export const deleteBlock = (id) => {
 }
 
 export const updateBlock = (id, data) => {
-  // return request({
-  //   url: '/store/update',
-  //   blockId: id,
-  //   data,
-  //   method: 'POST'
-  // })
-  return axios({
-    url: 'https://mock.mengxuegu.com/mock/62d014bf12622141e6caa20c/rfid-admin-mock/api/store/update',
-    blockId: id,
-    data,
-    method: 'POST'
+  return request({
+    url: '/store/update',
+    method: 'POST',
+    data: {
+      ...data,
+      blockId: id
+    }
   })
 }
 
@@ -38,12 +34,32 @@ export const allStoreList = () => {
   })
 }
 
+// 根据blockId获取试块详细信息
 export const blockDetail = (blockId) => {
-  // return request({
-  //   url: `/store/detail/${id}`
-  // })
-  return axios({
-    url: 'https://mock.mengxuegu.com/mock/62d014bf12622141e6caa20c/rfid-admin-mock/api/store/detail',
-    params: blockId
+  return request({
+    url: '/store/detail',
+    params: {
+      blockId
+    }
+  })
+}
+
+// 根据形状获取规格列表
+export const getSpecificationList = (shape) => {
+  return request({
+    url: '/store/specificationByShape',
+    params: {
+      shape
+    }
+  })
+}
+
+// 根据形状获取强度等级列表
+export const getStrengthList = (shape) => {
+  return request({
+    url: '/store/strengthByShape',
+    params: {
+      shape
+    }
   })
 }
