@@ -26,7 +26,7 @@ export const userBatchImport = data => {
  */
 export const deleteUser = (id) => {
   return request({
-    url: `/user-manage/detele/${id}`
+    url: `/user-manage/delete/${id}`
   })
 }
 

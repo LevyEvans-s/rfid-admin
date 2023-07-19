@@ -8,7 +8,7 @@
     <el-card>
       <div id="storeInfoBox">
         <!-- 标题 -->
-        <h2 class="title">{{$t('msg.storeInfo.title')}}</h2>
+        <h2 class="title">{{ $t('msg.storeInfo.title') }}</h2>
 
         <div class="header">
           <!-- 表格域上 -->
@@ -20,8 +20,8 @@
             <!-- 是否回收 -->
             <el-descriptions-item :span="2" :label="$t('msg.storeInfo.isRecycle')" align="center">
               <el-radio-group v-model="blockInfo.isRecycle">
-                <el-radio label="true" size="large">是</el-radio>
-                <el-radio label="false" size="large">否</el-radio>
+                <el-radio :label="true" size="large">是</el-radio>
+                <el-radio :label="false" size="large">否</el-radio>
               </el-radio-group>
             </el-descriptions-item>
             <!-- 项目品种 -->
@@ -33,8 +33,8 @@
             <!-- 样品状态 -->
             <el-descriptions-item :span="2" :label="$t('msg.storeInfo.status')" align="center">
               <el-radio-group v-model="blockInfo.status">
-                <el-radio label="1" size="large">可检</el-radio>
-                <el-radio label="2" size="large">已检</el-radio>
+                <el-radio :label="1" size="large">可检</el-radio>
+                <el-radio :label="2" size="large">已检</el-radio>
               </el-radio-group>
             </el-descriptions-item>
             <!-- 规格型号 -->
@@ -82,7 +82,7 @@
             </el-descriptions-item>
             <!-- 样品编号 -->
             <el-descriptions-item :span="1" :label="$t('msg.storeInfo.blockId')" align="center">
-              {{blockInfo.blockId}}
+              {{ blockInfo.blockId }}
             </el-descriptions-item>
             <!-- 代表部位 -->
             <el-descriptions-item :span="2" :label="$t('msg.storeInfo.part')" align="center">
@@ -104,7 +104,7 @@
         <div class="bottom">
           <el-descriptions :column="3" border>
             <el-descriptions-item :label="$t('msg.storeInfo.notion_param1')" label-align="center">
-              {{$t('msg.storeInfo.notion_param2')}}
+              {{ $t('msg.storeInfo.notion_param2') }}
             </el-descriptions-item>
           </el-descriptions>
         </div>
@@ -116,7 +116,7 @@
     </el-card>
   </div>
   <el-dialog v-model="dialogVisible" title="提交表单" width="30%" :before-close="onCloseSubmit">
-    <span :style="{'font-size': '16px'}">确认修改吗？</span>
+    <span :style="{ 'font-size': '16px' }">确认修改吗？</span>
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
@@ -138,7 +138,6 @@ const blockId = route.path.split('/')[3]
 const blockInfo = ref({})
 const getBlockDetail = async () => {
   const res = await blockDetail(blockId)
-  console.log(res)
   blockInfo.value = {
     ...res,
     makeTime: dateFilter(res.makeTime),
@@ -293,6 +292,7 @@ const onConfirm = async () => {
     type: 'success'
   })
   dialogVisible.value = false
+  submitLoading.value = false
   //   dialogVisible.value = false
   // } else {
   //   dialogVisible.value = false

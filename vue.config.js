@@ -11,7 +11,7 @@ module.exports = {
     //     changeOrigin: true
     //   }
     // }
-    proxy: 'http://1.15.242.140:8857'
+    proxy: 'http://101.34.8.23:8888'
   },
   chainWebpack(config) {
     // 设置 svg-sprite-loader

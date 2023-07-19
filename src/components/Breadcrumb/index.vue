@@ -43,7 +43,6 @@ watch(
 // 处理点击事件
 const router = useRouter()
 const onLinkClick = item => {
-  console.log(item)
   router.push(item.path)
 }
 
